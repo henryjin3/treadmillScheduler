@@ -6,7 +6,8 @@ if(Meteor.isClient) {
       Meteor.call('removeAllScheduleEntries');
 
       var startTime = 8;
-      for(var i = 0; i < startTime; i++) {
+      var length = 9;
+      for(var i = 0; i < length; i++) {
         var currentTime = startTime+i;
         ScheduleEntries.insert({
           time: currentTime + ':00',
