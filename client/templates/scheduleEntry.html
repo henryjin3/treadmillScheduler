@@ -2,6 +2,10 @@
     <tr>
       <td>{{time}}</td>
       <td><input id="name" type="text" class="form-control" value={{name}}></td>
-      <td></td>
+      <td>
+        {{#if currentUser}}
+          <button id="reserveBtn" class='btn btn-lg btn-primary'>Reserve</button>
+        {{/if}}
+      </td>
     </tr>
 </template>
