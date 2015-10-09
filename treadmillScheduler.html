@@ -1,29 +1,27 @@
 <head>
-  <title>treadmillScheduler</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Treadmill Scheduler</title>
 </head>
 
 <body>
-  {{> loginButtons}}
-  <div class="pure-g">
-    <h1>Treadmill Scheduler</h1>    
+  <header>
+    <div class="jumbotron">
+      <h1>Treadmill Scheduler</h1>
+      <div class="login-area">
+        {{> loginButtons}}
+      </div>
+    </div>
+  </header>
+  <div class="container-fluid">
+    <div class="row">
+      <h4 class="col-xs-3">Time</h4>
+      <h4 class="col-xs-9">User</h4>
+    </div>
+    {{#each scheduleEntries}}
+      {{> scheduleEntry}}
+    {{/each}}
+    <div class="row">
+      <button id="reset" type="button" class="btn btn-warning btn-block">Reset Users</button>
+    </div>
   </div>
-  <table>
-    <thead>
-      <tr>
-        <th colspan="3">Treadmill Scheduler</th>
-      </tr>
-      <tr>
-        <th>Start Time</th>
-        <th colspan="2">User</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      {{#each scheduleEntries}}
-        {{> scheduleEntry}}
-      {{/each}}
-    </tbody>
-  </table>
-  <button id="reset" type="button" class="btn btn-primary btn-block">Reset Users</button>
 </body>

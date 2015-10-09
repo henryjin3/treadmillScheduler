@@ -1,11 +1,13 @@
 <template name="scheduleEntry">
-    <tr>
-      <td>{{time}}</td>
-      <td><input id="name" type="text" class="form-control" value={{name}}></td>
-      <td>
-        {{#if currentUser}}
-          <button id="reserveBtn" class='btn btn-lg btn-primary'>Reserve</button>
-        {{/if}}
-      </td>
-    </tr>
+  <div class="row">
+    <span class="col-xs-3"><p>{{time}}</p></span>
+    <span class="col-xs-6 nopadding"><input id="name" type="text" class="form-control" value={{name}}></span>
+    <span class="col-xs-3 nopadding">
+      {{#if currentUser}}
+        <button id="reserveBtn" class="btn btn-primary">Reserve</button>
+      {{else}}
+        <p>Sign in!</p>
+      {{/if}}
+    </span>
+  </div>
 </template>
